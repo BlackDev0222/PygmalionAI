@@ -79,7 +79,7 @@ def main(server_port: int,
 
     ui = build_gradio_ui_for(inference_fn, for_kobold=koboldai_url is not None)
     ui.launch(server_port=server_port,
-              server_name="149.36.0.222", share=share_gradio_link)
+              server_name="0.0.0.0", share=share_gradio_link)
 
 
 def _parse_args_from_argv() -> argparse.Namespace:
