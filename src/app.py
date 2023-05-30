@@ -78,7 +78,8 @@ def main(server_port: int,
         return bot_message
 
     ui = build_gradio_ui_for(inference_fn, for_kobold=koboldai_url is not None)
-    ui.launch(server_port=server_port, share=share_gradio_link)
+    ui.launch(server_port=server_port,
+              server_name="149.36.0.222", share=share_gradio_link)
 
 
 def _parse_args_from_argv() -> argparse.Namespace:
@@ -87,8 +88,7 @@ def _parse_args_from_argv() -> argparse.Namespace:
     parser.add_argument(
         "-m",
         "--model-name",
-        help=
-        "HuggingFace Transformers model name, if not using a KoboldAI instance as an inference server.",
+        help="HuggingFace Transformers model name, if not using a KoboldAI instance as an inference server.",
     )
     parser.add_argument(
         "-p",
